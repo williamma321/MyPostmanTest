@@ -3,7 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-    - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 4 -r cli,junit --reporter-html-export report.html
+    - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 5 -r cli,junit --reporter-html-export report.html
 artifacts:
   files:
     - '**/*'
