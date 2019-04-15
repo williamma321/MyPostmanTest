@@ -26,4 +26,4 @@ jobs:
           name: API Testing for Smoke Suite
           command: 'newman run "./STest.postman_collection.json"  --environment="./STest.postman_environment.json" -d "./badUserpwd.json" -n 4 -r cli,junit'
       - store_test_results:
-          path: test-results
+          path: ./
