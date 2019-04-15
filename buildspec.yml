@@ -6,4 +6,4 @@ phases:
       - npm install newman --global
   build:
     commands:
-      - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 4 -r junit 
+      - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 4 -r cli,junit 
