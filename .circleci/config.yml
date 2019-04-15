@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   newman: postman/newman@1.0.0
 jobs:
-  newman-collection-run-env-timeout:
+  newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
       - checkout
@@ -11,4 +11,4 @@ jobs:
           environment: ./STest.postman_environment.json
           iteration-data: ./badUserpwd.json
           iteration-count: 4
-          reporters: cli,junit
+          #reporters: cli,junit
