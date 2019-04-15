@@ -7,8 +7,6 @@ phases:
   build:
     commands:
       - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 4 -r junit 
-	  
-	  
 artifacts:
   files:
 - report.html
