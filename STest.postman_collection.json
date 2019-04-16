@@ -114,6 +114,664 @@
 			"response": []
 		},
 		{
+			"name": "Get Session ID Negative Test 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session?",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					],
+					"query": [
+						{
+							"key": "callback",
+							"value": "JSON",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session?",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					],
+					"query": [
+						{
+							"key": "callback",
+							"value": "JSON",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session ID Negative Test 8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "679594da-9eb0-4bd8-b6ec-b871e0daf666",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/session",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Session ID",
 			"event": [
 				{
@@ -327,12 +985,289 @@
 			"response": []
 		},
 		{
-			"name": "Get Author by ID",
+			"name": "Get Author Test 2",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"var AuthorListSchema = {",
+							"    \"Author\": ",
+							"      {",
+							"          \"Age\" : \"number\",",
+							"          \"Id\"  : \"number\",",
+							"          \"Name\": \"string\",",
+							"      }",
+							"      ",
+							"};",
+							"",
+							"let AuthorDetailInfo =[];",
+							"",
+							"let ListofAuthorResp = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(ListofAuthorResp, AuthorListSchema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test('Get Authors into the environment vars Array', function() {",
+							"",
+							"for(let i=0; i<ListofAuthorResp.length; i++) {",
+							"",
+							"  var Authors = ListofAuthorResp[i];",
+							"  AuthorDetailInfo.push({",
+							"      \"Age\": Authors.Age,",
+							"      \"Id\" : Authors.Id,",
+							"      \"Name\" : Authors.Name",
+							"  });",
+							"}",
+							"",
+							"  pm.environment.set(\"AuthorDetailArray\",AuthorDetailInfo );",
+							"  pm.environment.set(\"MaxAuthor\",(ListofAuthorResp.length-1) );",
+							"      ",
+							"    ",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id=12f91882-575b-4843-8a2f-7a35836ba3be",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "12f91882-575b-4843-8a2f-7a35836ba3be"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Test 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"var AuthorListSchema = {",
+							"    \"Author\": ",
+							"      {",
+							"          \"Age\" : \"number\",",
+							"          \"Id\"  : \"number\",",
+							"          \"Name\": \"string\",",
+							"      }",
+							"      ",
+							"};",
+							"",
+							"let AuthorDetailInfo =[];",
+							"",
+							"let ListofAuthorResp = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(ListofAuthorResp, AuthorListSchema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test('Get Authors into the environment vars Array', function() {",
+							"",
+							"for(let i=0; i<ListofAuthorResp.length; i++) {",
+							"",
+							"  var Authors = ListofAuthorResp[i];",
+							"  AuthorDetailInfo.push({",
+							"      \"Age\": Authors.Age,",
+							"      \"Id\" : Authors.Id,",
+							"      \"Name\" : Authors.Name",
+							"  });",
+							"}",
+							"",
+							"  pm.environment.set(\"AuthorDetailArray\",AuthorDetailInfo );",
+							"  pm.environment.set(\"MaxAuthor\",(ListofAuthorResp.length-1) );",
+							"      ",
+							"    ",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id=123",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author by ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							"let thisAuthorID = pm.iterationData.get(\"TestID\");",
+							"",
+							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
+							"",
+							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
+							"",
+							"    if (thisAuthorID > MaxAuthor)",
+							"    {",
+							"        thisAuthorID = MaxAuthor;",
+							"    }",
+							"    ",
+							"",
+							"console.log(\"thisAuthorID is :\", thisAuthorID);",
+							"",
+							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
+							"    ",
+							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
+							"    ",
+							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
+							"",
+							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
+							"    ",
+							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
+							"",
+							"    ",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
 						"exec": [
 							"var AuthorListSchema = {",
 							"    \"Author\": ",
@@ -390,41 +1325,6 @@
 						],
 						"type": "text/javascript"
 					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "226e83a7-0720-4a5b-b75c-ae6a8477ef0d",
-						"exec": [
-							"let thisAuthorID = pm.iterationData.get(\"TestID\");",
-							"",
-							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
-							"",
-							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
-							"",
-							"    if (thisAuthorID > MaxAuthor)",
-							"    {",
-							"        thisAuthorID = MaxAuthor;",
-							"    }",
-							"    ",
-							"",
-							"console.log(\"thisAuthorID is :\", thisAuthorID);",
-							"",
-							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
-							"    ",
-							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
-							"    ",
-							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
-							"",
-							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
-							"    ",
-							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
-							"",
-							"    ",
-							"    "
-						],
-						"type": "text/javascript"
-					}
 				}
 			],
 			"request": {
@@ -477,6 +1377,595 @@
 					]
 				},
 				"description": "Get Author"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id=123",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.clientError;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author Negative Test 9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2489fa-d3db-4604-a689-43311342a864",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author?session_id=12f91882-575b-4843-8a2f-7a35836ba3be",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "12f91882-575b-4843-8a2f-7a35836ba3be"
+						}
+					]
+				}
 			},
 			"response": []
 		}
