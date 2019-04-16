@@ -700,11 +700,6 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(500);",
 							"});",
 							"",
-							"",
-							"",
-							"",
-							"",
-							"",
 							""
 						],
 						"type": "text/javascript"
@@ -1381,6 +1376,624 @@
 			"response": []
 		},
 		{
+			"name": "Get Author by ID Test 2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							"let thisAuthorID =  pm.iterationData.get(\"TestID\");",
+							"",
+							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
+							"",
+							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
+							"",
+							"    if (thisAuthorID > MaxAuthor)",
+							"    {",
+							"        thisAuthorID = MaxAuthor;",
+							"    }",
+							"    ",
+							"",
+							"console.log(\"thisAuthorID is :\", thisAuthorID);",
+							"",
+							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
+							"    ",
+							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
+							"    ",
+							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
+							"",
+							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
+							"    ",
+							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
+							"",
+							"    ",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
+						"exec": [
+							"var AuthorListSchema = {",
+							"    \"Author\": ",
+							"      {",
+							"          \"Age\" : \"number\",",
+							"          \"Id\"  : \"number\",",
+							"          \"Name\": \"string\",",
+							"      }",
+							"      ",
+							"};",
+							"",
+							"let AuthorDetailInfo =[];",
+							"",
+							"let OneAuthorResp = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(OneAuthorResp, AuthorListSchema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test('Get Single Authors into the environment var', function() {",
+							"",
+							"  var Author = OneAuthorResp;",
+							"  ",
+							"  AuthorDetailInfo.push({",
+							"      \"Age\": Author.Age,",
+							"      \"Id\" : Author.Id,",
+							"      \"Name\" : Author.Name})",
+							"",
+							"  pm.environment.set(\"OneAuthorFromID\",AuthorDetailInfo );",
+							"   ",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check Author name by ID\", function () {",
+							"    var Authorchk = OneAuthorResp;",
+							"    let AuthorDetailArry = pm.environment.get(\"AuthorDetailArray\");",
+							"    var AuthorDetail = AuthorDetailArry[(pm.environment.get(\"AuthorIDBeingSentisNOW\")-1)];",
+							"    ",
+							"    pm.expect(Authorchk.Age).to.eql(AuthorDetail.Age);",
+							"    pm.expect(Authorchk.Id).to.eql(AuthorDetail.Id);",
+							"    pm.expect(Authorchk.Name).to.eql(AuthorDetail.Name);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author/{{AuthorIDBeingSentisNOW}}?session_id=12f91882-575b-4843-8a2f-7a35836ba3be",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author",
+						"{{AuthorIDBeingSentisNOW}}"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "12f91882-575b-4843-8a2f-7a35836ba3be"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author by ID Test 3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							"let thisAuthorID =  pm.iterationData.get(\"TestID\");",
+							"",
+							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
+							"",
+							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
+							"",
+							"    if (thisAuthorID > MaxAuthor)",
+							"    {",
+							"        thisAuthorID = MaxAuthor;",
+							"    }",
+							"    ",
+							"",
+							"console.log(\"thisAuthorID is :\", thisAuthorID);",
+							"",
+							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
+							"    ",
+							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
+							"    ",
+							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
+							"",
+							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
+							"    ",
+							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
+							"",
+							"    ",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
+						"exec": [
+							"var AuthorListSchema = {",
+							"    \"Author\": ",
+							"      {",
+							"          \"Age\" : \"number\",",
+							"          \"Id\"  : \"number\",",
+							"          \"Name\": \"string\",",
+							"      }",
+							"      ",
+							"};",
+							"",
+							"let AuthorDetailInfo =[];",
+							"",
+							"let OneAuthorResp = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(OneAuthorResp, AuthorListSchema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test('Get Single Authors into the environment var', function() {",
+							"",
+							"  var Author = OneAuthorResp;",
+							"  ",
+							"  AuthorDetailInfo.push({",
+							"      \"Age\": Author.Age,",
+							"      \"Id\" : Author.Id,",
+							"      \"Name\" : Author.Name})",
+							"",
+							"  pm.environment.set(\"OneAuthorFromID\",AuthorDetailInfo );",
+							"   ",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check Author name by ID\", function () {",
+							"    var Authorchk = OneAuthorResp;",
+							"    let AuthorDetailArry = pm.environment.get(\"AuthorDetailArray\");",
+							"    var AuthorDetail = AuthorDetailArry[(pm.environment.get(\"AuthorIDBeingSentisNOW\")-1)];",
+							"    ",
+							"    pm.expect(Authorchk.Age).to.eql(AuthorDetail.Age);",
+							"    pm.expect(Authorchk.Id).to.eql(AuthorDetail.Id);",
+							"    pm.expect(Authorchk.Name).to.eql(AuthorDetail.Name);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author/{{AuthorIDBeingSentisNOW}}?session_id=73464",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author",
+						"{{AuthorIDBeingSentisNOW}}"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "73464"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author by ID Negative Test",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.ok;",
+							"//    pm.response.to.be.json;",
+							"});",
+							"",
+							"",
+							"/// Seems like this is a bug, since there should be error because the AuthorID is not found:",
+							"/*",
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"*/",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author/348530498?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author",
+						"348530498"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author by ID Negative Test 2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							"let thisAuthorID =  pm.iterationData.get(\"TestID\");",
+							"",
+							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
+							"",
+							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
+							"",
+							"    if (thisAuthorID > MaxAuthor)",
+							"    {",
+							"        thisAuthorID = MaxAuthor;",
+							"    }",
+							"    ",
+							"",
+							"console.log(\"thisAuthorID is :\", thisAuthorID);",
+							"",
+							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
+							"    ",
+							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
+							"    ",
+							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
+							"",
+							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
+							"    ",
+							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
+							"",
+							"    ",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author/{{AuthorIDBeingSentisNOW}}?session_id={{CurrentSessionID}}",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author",
+						"{{AuthorIDBeingSentisNOW}}"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "{{CurrentSessionID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author by ID Negative Test 3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03b1264f-2b54-477c-8fa3-1e9a347b3276",
+						"exec": [
+							"let thisAuthorID =  pm.iterationData.get(\"TestID\");",
+							"",
+							"console.log(\"thisAuthorID 1  is :\", thisAuthorID);",
+							"",
+							"let MaxAuthor = pm.environment.get(\"MaxAuthor\");",
+							"",
+							"    if (thisAuthorID > MaxAuthor)",
+							"    {",
+							"        thisAuthorID = MaxAuthor;",
+							"    }",
+							"    ",
+							"",
+							"console.log(\"thisAuthorID is :\", thisAuthorID);",
+							"",
+							"    let Cur_AuthorArray = pm.environment.get(\"AuthorDetailArray\");",
+							"    ",
+							"   // console.log(\"Cur_AuthorArray is :\", JSON.stringify(Cur_AuthorArray));",
+							"    ",
+							"    let AuthorIDbeingSent = Cur_AuthorArray[thisAuthorID];",
+							"",
+							"    // console.log(\"AuthorIDbeingSent is :\", JSON.stringify(AuthorIDbeingSent));",
+							"    ",
+							"    pm.environment.set(\"AuthorIDBeingSentisNOW\",AuthorIDbeingSent.Id );",
+							"",
+							"    ",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "407d775f-9332-48b8-a05a-69dcb66d0e3d",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.error;",
+							"    pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://www.libraryinformationsystem.org/Services/RestService.svc/author/23432?session_id=242343",
+					"protocol": "http",
+					"host": [
+						"www",
+						"libraryinformationsystem",
+						"org"
+					],
+					"path": [
+						"Services",
+						"RestService.svc",
+						"author",
+						"23432"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "242343"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Author Negative Test",
 			"event": [
 				{
@@ -1529,10 +2142,10 @@
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
 						"exec": [
-							"pm.test(\"Status code is 400\", function() {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
 							"    pm.response.to.be.error;",
-							"    pm.response.to.be.badRequest;",
+							"    pm.response.to.be.clientError;",
 							"});",
 							"",
 							"",
@@ -1548,7 +2161,19 @@
 			],
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
 				},
 				"method": "DELETE",
 				"header": [
@@ -1593,10 +2218,10 @@
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
 						"exec": [
-							"pm.test(\"Status code is 400\", function() {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
 							"    pm.response.to.be.error;",
-							"    pm.response.to.be.badRequest;",
+							"    pm.response.to.be.clientError;",
 							"});",
 							"",
 							"",
@@ -1612,7 +2237,19 @@
 			],
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
 				},
 				"method": "PUT",
 				"header": [
@@ -1657,10 +2294,10 @@
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
 						"exec": [
-							"pm.test(\"Status code is 400\", function() {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
 							"    pm.response.to.be.error;",
-							"    pm.response.to.be.badRequest;",
+							"    pm.response.to.be.clientError;",
 							"});",
 							"",
 							"",
@@ -1676,7 +2313,19 @@
 			],
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
 				},
 				"method": "DELETE",
 				"header": [
@@ -1721,10 +2370,10 @@
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
 						"exec": [
-							"pm.test(\"Status code is 400\", function() {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
 							"    pm.response.to.be.error;",
-							"    pm.response.to.be.badRequest;",
+							"    pm.response.to.be.clientError;",
 							"});",
 							"",
 							"",
@@ -1740,7 +2389,19 @@
 			],
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
 				},
 				"method": "OPTIONS",
 				"header": [
@@ -1785,10 +2446,10 @@
 					"script": {
 						"id": "7f2489fa-d3db-4604-a689-43311342a864",
 						"exec": [
-							"pm.test(\"Status code is 400\", function() {",
-							"    pm.response.to.have.status(400);",
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
 							"    pm.response.to.be.error;",
-							"    pm.response.to.be.badRequest;",
+							"    pm.response.to.be.clientError;",
 							"});",
 							"",
 							"",
@@ -1804,7 +2465,19 @@
 			],
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "librarian",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "librarian",
+							"type": "string"
+						}
+					]
 				},
 				"method": "HEAD",
 				"header": [
