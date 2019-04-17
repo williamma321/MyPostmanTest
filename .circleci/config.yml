@@ -24,7 +24,7 @@ jobs:
       # This should go into custom primary image, here's only for the sake of explanation
       - run:
           name: API Testing for Smoke Suite
-          command: 'newman run "./STest.postman_collection.json"  --environment="./STest.postman_environment.json" -d "./badUserpwd.json" -n 5 -r cli,junit --insecure'
+          command: 'newman run "./STest.postman_collection.json"  --environment="./STest.postman_environment.json" -d "./ListofAuthor.json" -n 4 -r cli,junit --insecure'
 
       - run:
           name: API Testing for Smoke Suite
