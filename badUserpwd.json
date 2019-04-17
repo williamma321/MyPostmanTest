@@ -5,7 +5,7 @@
 		"TestID" : 0
     },
     {
-        "BadUserName": "user1",
+        "BadUserName": "user12",
         "Badpwd": "",
 		"TestID" : 1
     },
