@@ -20,7 +20,7 @@
 		"TestID" : 3
     },	
     {
-        "BadUserName": "User123",
+        "BadUserName": "$@#)(*>>",
         "Badpwd": "librarian",
 		"TestID" : 4        
     }
