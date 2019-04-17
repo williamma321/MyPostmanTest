@@ -25,5 +25,10 @@ jobs:
       - run:
           name: API Testing for Smoke Suite
           command: 'newman run "./STest.postman_collection.json"  --environment="./STest.postman_environment.json" -d "./badUserpwd.json" -n 5 -r cli,junit --insecure'
+
+      - run:
+          name: API Testing for Smoke Suite
+          command: 'newman run "./SNegTest.postman_collection.json"  --environment="./STestNeg.postman_environment.json" -d "./badUserpwd.json" -n 5 -r cli,junit --insecure'
+          
       - store_test_results:
           path: ./
