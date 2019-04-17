@@ -11,7 +11,7 @@
     },
     {
         "BadUserName": "librarian",
-        "Badpwd": "Password1",
+        "Badpwd": "librarian",
 		"TestID" : 2
     },
     {
