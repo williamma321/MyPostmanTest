@@ -4,6 +4,7 @@ phases:
   build:
     commands:
     - newman run STest.postman_collection.json -e STest.postman_environment.json -d badUserpwd.json -n 5 -r cli,junit --reporter-html-export report.html --insecure
+    - newman run SNegTest.postman_collection.json -e STestNeg.postman_environment.json -d badUserpwd.json -n 5 -r cli,junit --reporter-html-export report.html --insecure
 artifacts:
   files:
     - '**/*'
