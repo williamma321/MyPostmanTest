@@ -3,7 +3,7 @@
 		"_postman_id": "5f6512ba-6b56-433c-ab9e-415ff1861657",
 		"name": "Sema4 Test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
+	 },
 	"item": [
 		{
 			"name": "Get Session ID",
